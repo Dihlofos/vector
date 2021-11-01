@@ -1,0 +1,48 @@
+.header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  color: $green;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+      overflow: visible !important;
+      align-items: flex-start;
+    }
+  }
+
+  &__logo {
+    margin: 0 0 0 6rem;
+    svg {
+      fill: none;
+    }
+
+    @media (max-width: $mobile) {
+      width: 18rem;
+      margin: 1.7rem 0 0;
+
+      svg {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: $laptop) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  @media (max-width: $tablet) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: transparent;
+  }
+}

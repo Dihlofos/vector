@@ -1,0 +1,139 @@
+.howto {
+  background-color: $white;
+  position: relative;
+  z-index: 6;
+  padding-bottom: 6rem;
+
+  @media (max-width: 1440px) {
+    padding-bottom: 0;
+  }
+
+  &__title {
+    margin: 0 0 4.5rem;
+  }
+
+  &__container {
+    @media (max-width: $tablet) {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    img {
+      margin: 0 1rem 0 0;
+    }
+    p {
+      margin: 0;
+      font-weight: bold;
+      font-size: 2rem;
+      line-height: 2.4rem;
+      text-transform: uppercase;
+      color: $black;
+    }
+
+    @media (max-width: $tablet) {
+      margin: 0 0 6rem;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__lines {
+    display: flex;
+    align-items: center;
+    margin: 5rem auto 0;
+    justify-content: space-between;
+    max-width: 102rem;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      margin: 0 2rem 0 0;
+      width: 3rem;
+    }
+  }
+
+  &__circle {
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: $green;
+  }
+
+  &__line {
+    position: relative;
+    flex-grow: 1;
+    height: 1px;
+    border-bottom: 1px solid $green;
+    margin: 0 1rem;
+
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      height: 1px;
+      border-bottom: 1px solid $green;
+      right: 0;
+      width: 0.5rem;
+    }
+
+    &:after {
+      top: 0.2rem;
+      transform: rotate(-45deg);
+    }
+
+    &:before {
+      top: -0.2rem;
+      transform: rotate(45deg);
+    }
+
+    @media (max-width: $tablet) {
+      border-left: 1px solid green;
+      border-bottom: 0;
+      margin: 0 0 0.5rem;
+
+      &:before,
+      &:after {
+        width: 0.8rem;
+        bottom: 0.2rem;
+        top: auto;
+      }
+
+      &:after {
+        right: -0.1rem;
+        transform: rotate(45deg);
+      }
+
+      &:before {
+        transform: rotate(-45deg);
+        right: -0.7rem;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      &:after {
+        right: -1px;
+      }
+
+      &:before {
+        right: -6px;
+      }
+    }
+  }
+}

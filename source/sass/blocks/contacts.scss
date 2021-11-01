@@ -1,0 +1,249 @@
+.contacts {
+  position: relative;
+  z-index: 5;
+  background: $black;
+  padding: 36.3rem 0 6rem;
+
+  @media (min-width: 1930px) {
+    background-color: $black;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 22.3rem 0 6rem;
+  }
+
+  @media (max-height: 864px) and (min-width: 1440px) {
+    padding: 30rem 0 5rem;
+  }
+
+  &__bg {
+    position: absolute;
+    top: -13.5rem;
+    left: 50%;
+    width: 100%;
+    position: absolute;
+    max-width: 144rem;
+    transform: translateX(-50%);
+
+    @media (max-width: 1440px) {
+      top: -8rem;
+      width: 101%;
+      max-width: 101%;
+    }
+
+    @media (max-width: $mobile) {
+      top: 0;
+    }
+  }
+
+  &__downIcon {
+    position: absolute;
+    top: 6.5rem;
+    left: 50%;
+    width: 3.4rem;
+    transform: translateX(-50%) rotate(90deg);
+
+    @media (max-width: $tablet) {
+      top: 2.5rem;
+    }
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    line-height: 3.9rem;
+    font-weight: 700;
+    margin: -1rem 0 1rem;
+
+    &--mob {
+      display: none;
+      max-width: 70rem;
+      margin: 0 0 5rem;
+    }
+
+    @media (max-width: $tablet) {
+      display: none;
+      text-align: center;
+
+      &--mob {
+        display: block;
+      }
+    }
+  }
+
+  &__info-list {
+    list-style: none;
+    padding: 0 0 0 0.5rem;
+    margin: 0;
+    margin: 3.2rem 0 4.4rem;
+  }
+
+  &__info-item {
+    display: flex;
+    align-items: center;
+    color: $white;
+    margin: 0 0 1rem;
+
+    p {
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.2rem;
+    height: 5.2rem;
+    border-radius: 50%;
+    border: 1px solid $white;
+    margin: 0 2rem 0 0;
+  }
+
+  &__messenger-links {
+    display: flex;
+    margin: 0 -0.7rem;
+  }
+
+  &__messenger-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    margin: 0 0.7rem;
+
+    svg {
+      fill: $green;
+      transition: fill $tr;
+    }
+
+    &:hover {
+      svg {
+        fill: $white;
+      }
+    }
+  }
+}
+
+.contacts__container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  overflow: visible;
+
+  @media (max-width: $desktop) {
+    justify-content: center;
+  }
+
+  @media (max-width: $tablet) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+.contacts__content {
+  flex: 0 1 50%;
+
+  @media (max-width: $tablet) {
+    width: 71%;
+  }
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.contacts__formTitle {
+  color: $green;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  margin: 0 0 2.9rem;
+}
+
+.contacts__copyright {
+  opacity: 0.65;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin: 5.2rem 0 0;
+
+  @media (max-width: $laptop) {
+    margin: 1rem 0 0;
+  }
+}
+
+.contacts__email-link {
+  margin: 3.4rem 0 0;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 2.3rem;
+  line-height: 2.8rem;
+  color: $white;
+  gap: 1rem;
+}
+
+.contacts__form {
+  position: relative;
+  flex: 1 0 50%;
+  max-width: 41.7rem;
+  margin: 0 10.5rem 0 0;
+
+  @media (max-width: $desktop) {
+    margin: 0;
+  }
+
+  @media (max-width: $laptop) {
+    max-width: unset;
+  }
+
+  @media (max-width: $tablet) {
+    width: 71%;
+    margin: 0 0 3rem;
+  }
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.contacts__form-message {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  z-index: 3;
+  border-radius: 2rem;
+  color: $black;
+  padding: 2rem;
+  text-align: center;
+  @include font(2.5rem, 3.5rem, 700);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+
+  svg {
+    margin: 0 0 1.5rem;
+  }
+
+  .js-form-done & {
+    opacity: 1;
+  }
+}

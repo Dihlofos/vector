@@ -1,0 +1,58 @@
+.order {
+  padding: 4rem 0 9rem;
+
+  @media (max-width: $mobile) {
+    padding: 4rem 0 7rem;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 943px;
+    width: 100%;
+
+    @media (max-width: $mobile) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin: 0 0 1rem;
+    }
+
+    p {
+      width: 15rem;
+    }
+
+    &:nth-child(3) {
+      p {
+        width: 22.2rem;
+      }
+    }
+
+    &:nth-child(4) {
+      p {
+        width: 24rem;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      width: calc(50% - 1rem);
+      margin: 0 0 2rem;
+    }
+  }
+}
