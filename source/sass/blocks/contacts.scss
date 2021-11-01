@@ -2,31 +2,34 @@
   position: relative;
   z-index: 5;
   background: $black;
-  padding: 36.3rem 0 6rem;
+  margin: -14rem 0 0;
+  padding: 0 0 6rem;
+
+  @media (max-width: 1441px) {
+    margin: -6rem 0 0;
+  }
 
   @media (min-width: 1930px) {
     background-color: $black;
   }
 
   @media (max-width: $tablet) {
-    padding: 22.3rem 0 6rem;
+    margin: 0;
   }
 
-  @media (max-height: 864px) and (min-width: 1440px) {
-    padding: 30rem 0 5rem;
+  &__bg-wrap {
+    position: relative;
+    padding-bottom: 30.5%;
   }
 
   &__bg {
     position: absolute;
-    top: -13.5rem;
-    left: 50%;
-    width: 100%;
+    top: -0.2rem;
+    left: 0;
+    width: 101%;
     position: absolute;
-    max-width: 144rem;
-    transform: translateX(-50%);
 
     @media (max-width: 1440px) {
-      top: -8rem;
       width: 101%;
       max-width: 101%;
     }
@@ -38,13 +41,17 @@
 
   &__downIcon {
     position: absolute;
-    top: 6.5rem;
+    top: 14.5rem;
     left: 50%;
     width: 3.4rem;
     transform: translateX(-50%) rotate(90deg);
 
     @media (max-width: $tablet) {
-      top: 2.5rem;
+      top: 11.5rem;
+    }
+
+    @media (max-width: $mobile) {
+      display: none;
     }
   }
 

@@ -2,6 +2,7 @@
   position: relative;
   color: $black;
   padding: 3.5rem 0 0;
+  background-color: $black;
 
   &__circle {
     position: absolute;
@@ -59,6 +60,11 @@
     cursor: pointer;
     transition: border-color $tr;
 
+    &:active,
+    &:focus {
+      outline: none;
+    }
+
     &--next {
       right: -2rem;
       border: 10px solid transparent;
@@ -66,6 +72,16 @@
 
       &:hover {
         border-left-color: $green;
+      }
+
+      @media (max-width: $mobile) {
+        top: 1.5rem;
+        border: 15px solid transparent;
+        border-left: 18px solid $grey;
+
+        &:hover {
+          border-left-color: $grey;
+        }
       }
     }
 
@@ -76,6 +92,16 @@
 
       &:hover {
         border-right-color: $green;
+      }
+
+      @media (max-width: $mobile) {
+        top: 1.5rem;
+        border: 15px solid transparent;
+        border-right: 18px solid $grey;
+
+        &:hover {
+          border-right-color: $grey;
+        }
       }
     }
   }

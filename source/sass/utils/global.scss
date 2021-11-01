@@ -9,9 +9,9 @@ html {
     @include font(8px, 8px, 400);
   }
 
-  @media (max-height: 864px) and (min-width: 1440px) {
-    @include font(8px, 8px, 400);
-  }
+  // @media (max-height: 864px) and (min-width: 1440px) {
+  //   @include font(8px, 8px, 400);
+  // }
 }
 
 body {
@@ -22,7 +22,7 @@ body {
   min-width: 320px;
   margin: 0 auto;
   font-family: $montserrat;
-  background-color: $black;
+  background-color: $white;
   color: $white;
   overflow-x: hidden;
   display: flex;

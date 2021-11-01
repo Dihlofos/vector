@@ -1,11 +1,12 @@
 .intro {
   padding: 13.5rem 0 6rem;
+  background-color: $black;
 
   &__logo {
     position: absolute;
     left: -46rem;
     top: -21.5rem;
-    z-index: -1;
+    z-index: 0;
 
     @media (max-width: $mobile) {
       left: -14.8rem;
@@ -32,6 +33,10 @@
     text-align: center;
     z-index: 5;
     box-shadow: 0px 7px 39px 1px $green;
+
+    @media (max-width: $mobile) {
+      margin: -6rem auto 0;
+    }
   }
 
   &__wrapper {
@@ -93,15 +98,25 @@
       max-width: initial;
     }
 
+    @media (max-width: 1440px) {
+      padding-bottom: 79%;
+    }
+
     @media (max-width: $laptop) {
+      padding-bottom: 62%;
       img {
         max-width: 100%;
       }
     }
 
     @media (max-width: $mobile) {
+      padding: 0;
+
       img {
-        top: 87%;
+        position: relative;
+        top: -6rem;
+        left: 0;
+        transform: none;
       }
     }
   }
