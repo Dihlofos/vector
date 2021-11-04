@@ -11,17 +11,16 @@
     triggerHook: "onEnter",
   };
 
-  //about bg
+  //intro button
   new ScrollMagic.Scene({
     ...commonOptions,
-    triggerElement: "#about",
+    triggerElement: ".intro__button",
   })
-    .setClassToggle(".about__bg", "fadeIn")
-
+    .setClassToggle(".intro__button", "fadeIn")
     .addTo(controller);
 
-  //about items
-  document.querySelectorAll(".about__item").forEach((item) => {
+  //order items
+  document.querySelectorAll(".order__item").forEach((item) => {
     new ScrollMagic.Scene({
       ...commonOptions,
       offset: offset - 100,
@@ -32,58 +31,49 @@
   });
 
   //sliders
-  document.querySelectorAll(".js-slider").forEach((item) => {
+  document.querySelectorAll(".js-content").forEach((item) => {
     new ScrollMagic.Scene({
       ...commonOptions,
-      triggerElement: item,
+      triggerElement: ".catalog__content",
     })
-      .setClassToggle(item.querySelectorAll(".swiper-slide"), "fromLeft")
+      .setClassToggle(item.querySelectorAll(".catalog__content-item"), "fadeIn")
       .addTo(controller);
   });
 
-  //messages
-  document.querySelectorAll(".message").forEach((item) => {
-    new ScrollMagic.Scene({
-      ...commonOptions,
-      triggerElement: item,
-    })
-      .setClassToggle(item.querySelector(".message__dialog"), "fromScale")
-      .addTo(controller);
-
-    new ScrollMagic.Scene({
-      ...commonOptions,
-      triggerElement: item,
-    })
-      .setClassToggle(item.querySelector(".message__text"), "fadeIn")
-      .addTo(controller);
-
-    new ScrollMagic.Scene({
-      ...commonOptions,
-      triggerElement: item,
-    })
-      .setClassToggle(item.querySelector(".message__arrow"), "showFromRotate")
-      .addTo(controller);
-
-    new ScrollMagic.Scene({
-      ...commonOptions,
-      triggerElement: item,
-    })
-      .setClassToggle(item.querySelector(".message__dialogImage"), "fadeIn")
-      .addTo(controller);
-
-    new ScrollMagic.Scene({
-      ...commonOptions,
-      triggerElement: item,
-    })
-      .setClassToggle(item.querySelector(".message__team"), "fromTop")
-      .addTo(controller);
-  });
-
-  //about items
+  //howto
   new ScrollMagic.Scene({
     ...commonOptions,
-    triggerElement: ".contacts__manImg",
+    triggerElement: ".howto",
   })
-    .setClassToggle(".contacts__manImg", "fromDeepRight")
+    .setClassToggle(".howto", "howToAnimation")
+    .addTo(controller);
+
+  //contacts
+  new ScrollMagic.Scene({
+    ...commonOptions,
+    offset: 500,
+    triggerElement: ".contacts",
+  })
+    .setClassToggle(".contacts__bg-wrap", `${vw > 767 ? "fromBottom" : ""}`)
+    .addTo(controller);
+
+  new ScrollMagic.Scene({
+    ...commonOptions,
+    triggerElement: ".contacts__container",
+  })
+    .setClassToggle(
+      ".contacts__content",
+      `${vw > 767 ? "fromLeftDeep" : "fromTop"}`
+    )
+    .addTo(controller);
+
+  new ScrollMagic.Scene({
+    ...commonOptions,
+    triggerElement: ".contacts__container",
+  })
+    .setClassToggle(
+      ".contacts__form",
+      `${vw > 767 ? "fromDeepRight" : "fromTop"}`
+    )
     .addTo(controller);
 })();

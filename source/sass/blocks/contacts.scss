@@ -1,25 +1,35 @@
 .contacts {
   position: relative;
   z-index: 5;
-  background: $black;
+  background-color: $white;
   margin: -14rem 0 0;
-  padding: 0 0 6rem;
 
   @media (max-width: 1441px) {
     margin: -6rem 0 0;
-  }
-
-  @media (min-width: 1930px) {
-    background-color: $black;
   }
 
   @media (max-width: $tablet) {
     margin: 0;
   }
 
+  @media (max-width: $tablet) {
+    background-color: $black;
+  }
+
+  &__wrapper {
+    padding: 0 0 6rem;
+  }
+
   &__bg-wrap {
     position: relative;
     padding-bottom: 30.5%;
+    transform: translateY(20rem);
+    opacity: 0;
+
+    @media (max-width: $tablet) {
+      opacity: 1;
+      transform: none;
+    }
   }
 
   &__bg {
@@ -158,6 +168,7 @@
 }
 
 .contacts__content {
+  opacity: 0;
   flex: 0 1 50%;
 
   @media (max-width: $tablet) {
@@ -167,6 +178,10 @@
   @media (max-width: $mobile) {
     width: 100%;
   }
+}
+
+.contacts__form {
+  opacity: 0;
 }
 
 .contacts__formTitle {

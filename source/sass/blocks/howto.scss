@@ -4,6 +4,37 @@
   z-index: 6;
   padding-bottom: 6rem;
 
+  &.howToAnimation {
+    .howto__item {
+      animation-name: fromLeft;
+      animation-duration: 0.6s;
+      animation-fill-mode: both;
+      animation-timing-function: ease-out;
+
+      @media (max-width: $tablet) {
+        animation-name: fromTop;
+      }
+    }
+    .howto__circle {
+      background-color: $green;
+      animation-name: fadeIn;
+      animation-duration: 0.6s;
+      animation-fill-mode: both;
+      animation-timing-function: ease-out;
+    }
+
+    .howto__line {
+      animation-name: fromScaleX;
+      animation-duration: 0.6s;
+      animation-fill-mode: both;
+      animation-timing-function: ease-out;
+
+      @media (max-width: $tablet) {
+        animation-name: fromScaleY;
+      }
+    }
+  }
+
   @media (max-width: 1440px) {
     padding-bottom: 0;
   }
@@ -32,6 +63,7 @@
   }
 
   &__item {
+    opacity: 0;
     display: flex;
     align-items: center;
     img {
@@ -69,19 +101,43 @@
     }
   }
 
+  &__lineBlock {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+
+    &:last-child {
+      flex-grow: 0;
+    }
+  }
+
   &__circle {
     border-radius: 50%;
     width: 1.5rem;
     height: 1.5rem;
-    background-color: $green;
+    background-color: $grey;
+    flex-shrink: 0;
+    opacity: 0;
   }
 
   &__line {
     position: relative;
-    flex-grow: 1;
     height: 1px;
     border-bottom: 1px solid $green;
     margin: 0 1rem;
+    width: 100%;
+    transform-origin: 0 0;
+    transform: scaleX(0) scaleY(1);
+
+    @media (max-width: $tablet) {
+      height: 100%;
+      width: 1px;
+      transform: scaleX(1) scaleY(0);
+    }
 
     &:after,
     &:before {

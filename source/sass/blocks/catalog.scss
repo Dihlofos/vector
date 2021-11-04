@@ -183,6 +183,7 @@
   }
 
   &__content-item {
+    opacity: 0;
     position: relative;
     padding: 0;
     margin: 0;
@@ -190,6 +191,7 @@
     flex-wrap: wrap;
     width: calc(33.333333% - 20px);
     margin-bottom: 20px;
+    animation-duration: 0.5s;
 
     img {
       width: 100%;
