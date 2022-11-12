@@ -116,7 +116,7 @@
     margin-right: 30px !important;
     height: 7rem;
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.9rem;
     line-height: 2.4rem;
     text-align: center;
     cursor: pointer;
@@ -156,6 +156,8 @@
 
   &__content-list {
     display: none;
+    gap: 20px;
+    justify-content: space-between;
     padding: 0;
     margin: 0;
     flex-wrap: wrap;
@@ -171,15 +173,11 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    position: absolute;
-    bottom: 2rem;
-    left: 0;
-    width: 100%;
-    height: 100%;
     text-align: center;
     font-weight: 500;
     font-size: 2rem;
     line-height: 2.4rem;
+    padding: 2rem 0;
   }
 
   &__content-item {
@@ -188,35 +186,26 @@
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
-    width: calc(33.333333% - 20px);
-    margin-bottom: 20px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: calc(100%/3 - 20px);
+    height: 345px;
+    flex-shrink: 0;
     animation-duration: 0.5s;
+    background-color: #F4F4F4;
 
     img {
-      width: 100%;
-      height: 100%;
+      width: auto;
       object-fit: cover;
     }
 
-    &:nth-child(3n + 1) {
-      margin-right: 30px;
-      @media (max-width: $mobile) {
-        margin-right: 0;
-      }
+    &--full {
+      width: 100%;
     }
 
-    &:nth-child(3n + 2) {
-      margin-right: 30px;
-      @media (max-width: $mobile) {
-        margin-right: 0;
-      }
-    }
-
-    &:nth-child(2n + 1) {
-      @media (max-width: $mobile) {
-        margin-right: 20px;
-      }
+    &--third {
+      width: calc(100%/3 * 2 - 20px);
     }
 
     @media (max-width: $mobile) {

@@ -17,6 +17,7 @@
     centeredSlides: true,
     slidesPerView: "auto",
     spaceBetween: 0,
+    initialSlide: 1,
     speed: 1000,
     draggable: false,
     pagination: false,

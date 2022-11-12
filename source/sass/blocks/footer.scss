@@ -1,0 +1,9 @@
+.footer {
+  background-color: #000;
+
+  &__copyright {
+    opacity: 0.65;
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+}

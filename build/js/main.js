@@ -186,6 +186,13 @@
 
 "use strict";
 (function () {
+  const trigger = document.querySelector('.js-modal-trigger');
+  const modal = document.querySelector('.js-modal');
+  const modalClose = document.querySelector('.js-modal-close');
+})();
+
+"use strict";
+(function () {
   const contentsEls = document.querySelectorAll(".js-content");
   // e - индекс слайда
   const toggleContent = (e) => {
@@ -203,6 +210,7 @@
     centeredSlides: true,
     slidesPerView: "auto",
     spaceBetween: 0,
+    initialSlide: 1,
     speed: 1000,
     draggable: false,
     pagination: false,
