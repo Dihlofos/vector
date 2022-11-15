@@ -23,7 +23,7 @@
     width: 80%;
     z-index: 98;
     padding: 6.5rem 7rem 7rem;
-    overflow: scroll;
+    overflow: auto;
 
     @media (max-width: $mobile) {
       width: 100%;
