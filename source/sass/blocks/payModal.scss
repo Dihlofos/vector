@@ -67,7 +67,14 @@
   }
 
   &__block-icon {
+    display: flex;
+    align-items: flex-start;
+    height: 4rem;
     margin: 0 0 1.3rem;
+
+    img {
+      max-height: 100%;
+    }
   }
 
   &__block-title {

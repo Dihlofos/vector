@@ -1,8 +1,12 @@
 .catalog {
   position: relative;
   color: $black;
-  padding: 3.5rem 0 0;
+  padding: 17.5rem 0 0;
   background-color: $black;
+
+  @media (max-width: $mobile) {
+    padding: 9.5rem 0 0;
+  }
 
   &__circle {
     position: absolute;

@@ -1,8 +1,7 @@
 .howto {
-  // background-color: $white;
   position: relative;
   z-index: 6;
-  padding-bottom: 6rem;
+  padding: 17rem 0 22rem;
 
   &.howToAnimation {
     .howto__item {
@@ -36,7 +35,7 @@
   }
 
   @media (max-width: 1440px) {
-    padding-bottom: 0;
+    padding: 10rem 0 0;
   }
 
   &__title {
