@@ -122,7 +122,7 @@
               res[key] = value;
             }
             console.log("all correct, but not do anything further");
-            // sendEmail(res);
+            sendEmail(res);
           })
           .catch((error) => {
             formWrong.style.opaciy = 1;
@@ -134,12 +134,12 @@
   function sendEmail({ name, email, phone, message }) {
     formSubmitButton.setAttribute("disabled", true);
     Email.send({
-      SecureToken: "e8ae44f3-777e-40ec-a616-3f2aad062e93",
-      To: "Privet.spm@yandex.ru",
-      From: "maria@eventpro.ru.com",
+      SecureToken : "e5954290-31df-4abf-b5aa-8bb1d285f13a",
+      To : 'info@vektoruspeha.com',
+      From : "info@vektoruspeha.com",
       Subject: `${name} sent you a message`,
       Body: `
-        <p><h4>Привет, меня зовут: ${name}</h4></p>
+        <p><h4>Здравствуйте, меня зовут: ${name}</h4></p>
         <p><strong>Сообщение:</strong> ${message}</p>
         <p><strong>Адрес электронной почты:</strong> ${email}</p>
         <p><strong>Телефон:</strong> ${phone}</p>
